@@ -24,7 +24,7 @@ export const ImgBox = styled.picture`
 `;
 const ImgWrapper = styled.div``;
 export const TextWrapper = styled.div`
-  padding: 40px 30px;
+  padding: 40px 20px;
   background-color: ${props =>
     ({ theme }) =>
       theme[props.color]};

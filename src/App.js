@@ -9,13 +9,14 @@ import Hero from 'assets/images/home/showcase.jpg';
 import Hero2x from 'assets/images/home/showcase@2x.jpg';
 import AboutSection from 'components/section/AboutSection';
 import BlogSection from 'components/section/BlogSection';
+import ContactSection from 'components/section/ContactSection';
+import Footer from 'components/Footer';
 
 const Header = styled.header`
   margin: 0 auto;
   text-align: center;
 `;
 const Wrapper = styled.div`
-  height: 533px;
   padding-top: 20px;
   background-color: ${({ theme }) => theme.colorFooterBackground};
   background-image: linear-gradient(
@@ -26,7 +27,7 @@ const Wrapper = styled.div`
     url('${Hero}');
   background-repeat: no-repeat;
   background-size: auto 533px;
-  background-position: center;
+  background-position: top center;
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -55,9 +56,10 @@ function App() {
           <HeroSection />
           <AboutSection />
           <BlogSection />
+          <ContactSection />
         </main>
       </Wrapper>
-      <footer></footer>
+      <Footer />
     </ThemeProvider>
   );
 }
