@@ -3,8 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
 body {
   color: ${({ theme }) => theme.colorFont};
-  background-color: ${({ theme }) => theme.colorFooterBackground};
-font-family: 'Open Sans', sans-serif;
+  background-color: ${({ theme }) => theme.colorBackground};
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   overflow-x: hidden;

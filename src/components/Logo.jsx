@@ -4,9 +4,8 @@ import { ReactComponent as LogoIcon } from 'assets/logo-icon.svg';
 
 const LogoWrapper = styled.div`
   display: flex;
-  margin-top: 21px;
-  margin-left: 24px;
-  margin-right: 24px;
+  justify-content: center;
+  margin: 0 auto;
   font-weight: 400;
   font-size: 32px;
   line-height: 1.32;

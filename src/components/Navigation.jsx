@@ -2,11 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Link = styled.a`
+  display: inline-block;
+  height: 30px;
   color: ${({ theme }) => theme.colorSecondFont};
   font-size: 16px;
+  padding-bottom: 3px;
   line-height: 1.6;
   &:not(:last-child) {
     margin-right: 12px;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    border-bottom: 2px solid ${({ theme }) => theme.colorAccentFont};
   }
 `;
 const Nav = styled.nav`
