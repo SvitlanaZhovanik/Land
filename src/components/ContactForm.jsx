@@ -101,13 +101,21 @@ export default function ContactForm() {
     <Formik
       initialValues={{ email: '', name: '' }}
       validationSchema={SignupSchema}
-      onSubmit={values => {
+      onSubmit={(values, actions) => {
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: encode({ 'form-name': 'contact', ...values }),
         })
-          .then(() => alert('Success!'))
+          .then(() => {
+            alert('Success!');
+            actions.resetForm({
+              values: {
+                email: '',
+                name: '',
+              },
+            });
+          })
           .catch(error => alert(error));
       }}
     >
