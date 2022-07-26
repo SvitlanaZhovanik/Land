@@ -105,9 +105,9 @@ export default function ContactForm() {
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({ 'form-name': 'contact', values }),
+          body: encode({ 'form-name': 'contact', ...values }),
         })
-          .then(() => alert('Success!'))
+          .then()
           .catch(error => alert(error));
       }}
     >
@@ -115,7 +115,7 @@ export default function ContactForm() {
         <Form>
           <input type="hidden" name="form-name" value="contact" />
           <InputWrapper>
-            <Input type="name" name="name" placeholder=" " />
+            <Input type="text" name="name" placeholder=" " />
             <Label htmlFor="name">Enter your name</Label>
             {errors.name && touched.name ? <Error>{errors.name}</Error> : null}
           </InputWrapper>
