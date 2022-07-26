@@ -81,6 +81,10 @@ const Button = styled(StyledButton)`
   @media screen and (min-width: 768px) {
     padding-top: 8px;
     padding-bottom: 8px;
+    margin-top: 40px;
+  }
+  @media screen and (min-width: 1360px) {
+    margin-top: 60px;
   }
 `;
 
