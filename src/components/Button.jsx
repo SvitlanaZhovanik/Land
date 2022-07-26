@@ -25,7 +25,7 @@ export const StyledButton = styled.button`
 
   @media screen and (min-width: 768px) {
     width: calc(${props => props.width} + 10px);
-    height: calc(${props => props.height} + 3px);
+    height: calc(${props => props.height} + 2px);
     font-size: 18px;
     line-height: 1.5;
     padding: 11px 33px;

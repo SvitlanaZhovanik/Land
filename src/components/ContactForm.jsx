@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
-
-import { ReactComponent as Warning } from 'assets/images/form/worning.svg';
+import { Formik, Field, Form } from 'formik';
 import { StyledButton } from './Button';
+import { ReactComponent as Warning } from 'assets/images/form/worning.svg';
 
 const Error = styled.div`
   display: flex;
@@ -20,9 +19,9 @@ const Error = styled.div`
 const InputWrapper = styled.div`
   position: relative;
   margin-top: 22px;
-  height: 50px;
+  height: 45px;
   @media screen and (min-width: 768px) {
-    margin-top: 32px;
+    margin-top: 30px;
   }
 `;
 const Input = styled(Field)`
@@ -83,11 +82,6 @@ const Button = styled(StyledButton)`
     padding-top: 8px;
     padding-bottom: 8px;
   }
-  @media screen and (min-width: 1920px) {
-    height: 50px;
-    padding: 10px 40px;
-    width: 400px;
-  }
 `;
 
 const SignupSchema = Yup.object().shape({
@@ -96,6 +90,11 @@ const SignupSchema = Yup.object().shape({
     .email('Invalid email')
     .required('This is a required field'),
 });
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
 
 export default function ContactForm() {
   return (
@@ -103,11 +102,18 @@ export default function ContactForm() {
       initialValues={{ email: '', name: '' }}
       validationSchema={SignupSchema}
       onSubmit={values => {
-        console.log(values);
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({ 'form-name': 'contact', values }),
+        })
+          .then(() => alert('Success!'))
+          .catch(error => alert(error));
       }}
     >
       {({ errors, touched, isSubmitting }) => (
         <Form>
+          <input type="hidden" name="form-name" value="contact" />
           <InputWrapper>
             <Input type="name" name="name" placeholder=" " />
             <Label htmlFor="name">Enter your name</Label>

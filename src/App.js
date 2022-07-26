@@ -15,10 +15,14 @@ import Footer from 'components/Footer';
 import CasesSection from 'components/section/CasesSection';
 import TeamSection from 'components/section/TeamSection';
 
+const Container = styled.div`
+  max-width: 1360px;
+  margin: 0 auto;
+`;
+
 const Header = styled.header`
   margin: 0 auto;
   text-align: center;
-  height: 120px;
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
@@ -28,8 +32,10 @@ const Header = styled.header`
   &.is-sticky {
     position: fixed;
     top: 0;
-    left: 0;
+    left: auto;
     width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
     z-index: 10;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
@@ -41,22 +47,18 @@ const Wrapper = styled.div`
   padding-top: 20px;
   background-image: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
     ),
     url('${Hero}');
   background-repeat: no-repeat;
-  background-size: auto 535px;
+  background-size: auto 565px;
   background-position: top center;
   @media screen and (min-width: 768px) {
     background-size: auto 1040px;
   }
   @media screen and (min-width: 1360px) {
     background-size: auto 820px, contain;
-    background-position: top;
-  }
-  @media screen and (min-width: 1920px) {
-    background-size: auto 1200px, contain;
     background-position: top;
   }
 
@@ -66,8 +68,8 @@ const Wrapper = styled.div`
     .box {
       background-image: linear-gradient(
           0deg,
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.4)
         ),
         url('${Hero2x}');
     }
@@ -92,21 +94,23 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Wrapper>
-        <Header id="header">
-          <Logo />
-          <Navigation />
-        </Header>
-        <main>
-          <HeroSection />
-          <AboutSection />
-          <CasesSection />
-          <BlogSection />
-          <TeamSection />
-          <ContactSection />
-        </main>
-      </Wrapper>
-      <Footer />
+      <Container>
+        <Wrapper>
+          <Header id="header">
+            <Logo />
+            <Navigation />
+          </Header>
+          <main>
+            <HeroSection />
+            <AboutSection />
+            <CasesSection />
+            <BlogSection />
+            <TeamSection />
+            <ContactSection />
+          </main>
+        </Wrapper>
+        <Footer />
+      </Container>
     </ThemeProvider>
   );
 }

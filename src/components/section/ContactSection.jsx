@@ -22,9 +22,6 @@ const Wrapper = styled.div`
     padding: 40px 30px;
     width: 100%;
   }
-  @media screen and (min-width: 1920px) {
-    padding: 80px 100px;
-  }
 `;
 
 export default function ContactSection() {

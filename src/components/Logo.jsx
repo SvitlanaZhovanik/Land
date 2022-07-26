@@ -24,12 +24,11 @@ const LogoWrapper = styled.div`
   &:hover,
   &:focus {
     transform: scale(1.1);
-    color: ${({ theme }) => theme.colorWhiteHover};
-    fill: ${({ theme }) => theme.colorGreenHover};
+    opacity: 0.8;
   }
   &:hover span,
   &:focus span {
-    color: ${({ theme }) => theme.colorGreenHover};
+    opacity: 0.8;
   }
   @media screen and (min-width: 768px) {
     margin: 0 32px;

@@ -14,10 +14,6 @@ export const Section = styled.section`
     padding-bottom: ${props => (props.pb ? '282px' : 0)};
     padding-top: ${props => (props.pb ? ' 230px' : 0)};
   }
-  @media screen and (min-width: 1920px) {
-    padding-bottom: ${props => (props.pb ? '450px' : 0)};
-    padding-top: ${props => (props.pb ? '450px' : 0)};
-  }
 `;
 const Title = styled.h1`
   font-weight: 300;
