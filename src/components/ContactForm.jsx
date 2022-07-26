@@ -58,9 +58,11 @@ const Button = styled(StyledButton)`
   height: 42px;
   margin-top: 35px;
   color: ${({ theme }) => theme.colorSecondFont};
+  cursor: pointer;
   &:hover,
   &:focus {
     background-color: ${({ theme }) => theme.colorGreenHover};
+    color: ${({ theme }) => theme.colorSecondFont};
   }
 `;
 

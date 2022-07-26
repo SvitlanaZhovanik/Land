@@ -8,9 +8,7 @@ const Link = styled.a`
   font-size: 16px;
   padding-bottom: 3px;
   line-height: 1.6;
-  &:not(:last-child) {
-    margin-right: 12px;
-  }
+
   &:hover,
   &:focus,
   &:active {
@@ -19,16 +17,35 @@ const Link = styled.a`
 `;
 const Nav = styled.nav`
   margin: 12px 22px;
+  & ul {
+    display: flex;
+    justify-content: center;
+  }
+  & li:not(:last-child) {
+    margin-right: 12px;
+  }
 `;
 
 export default function Navigation() {
   return (
     <Nav>
-      <Link href="#home">Home</Link>
-      <Link href="#about">About</Link>
-      <Link href="#cases">Cases</Link>
-      <Link href="#blog">Blog</Link>
-      <Link href="#contact">Contact</Link>
+      <ul>
+        <li>
+          <Link href="#home">Home</Link>
+        </li>
+        <li>
+          <Link href="#about">About</Link>
+        </li>
+        <li>
+          <Link href="#cases">Cases</Link>
+        </li>
+        <li>
+          <Link href="#blog">Blog</Link>
+        </li>
+        <li>
+          <Link href="#contact">Contact</Link>
+        </li>
+      </ul>
     </Nav>
   );
 }

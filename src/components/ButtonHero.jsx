@@ -12,6 +12,7 @@ const HeroButton = styled(StyledButton)`
   align-items: center;
   background-color: ${({ theme }) => theme.colorGreenBackground};
   border: none;
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {

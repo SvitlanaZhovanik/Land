@@ -12,6 +12,7 @@ export const StyledButton = styled.button`
       theme[props.color]};
   border: 1px solid ${({ theme }) => theme.colorSecondFont};
   border-radius: 5px;
+  cursor: pointer;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
