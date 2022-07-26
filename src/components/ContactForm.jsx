@@ -8,15 +8,22 @@ import { StyledButton } from './Button';
 
 const Error = styled.div`
   display: flex;
+  align-items: center;
   font-size: 10px;
   margin-top: 2px;
   color: red;
   padding-left: 10px;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 const InputWrapper = styled.div`
   position: relative;
   margin-top: 22px;
   height: 50px;
+  @media screen and (min-width: 768px) {
+    margin-top: 32px;
+  }
 `;
 const Input = styled(Field)`
   width: 100%;
@@ -37,6 +44,9 @@ const Input = styled(Field)`
   &:not(:placeholder-shown) + label {
     transform: translateY(-40px);
   }
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 const Label = styled.label`
   position: absolute;
@@ -50,6 +60,9 @@ const Label = styled.label`
   &:focus,
   &:hover {
     transform: translateY(-40px);
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
   }
 `;
 
@@ -65,6 +78,15 @@ const Button = styled(StyledButton)`
     opacity: 0.8;
     background-color: ${({ theme }) => theme.colorGreenBackground};
     color: ${({ theme }) => theme.colorSecondFont};
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  @media screen and (min-width: 1920px) {
+    height: 50px;
+    padding: 10px 40px;
+    width: 400px;
   }
 `;
 

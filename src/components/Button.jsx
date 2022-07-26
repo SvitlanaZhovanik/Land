@@ -22,6 +22,14 @@ export const StyledButton = styled.button`
       ({ theme }) =>
         theme[props.color]};
   }
+
+  @media screen and (min-width: 768px) {
+    width: calc(${props => props.width} + 10px);
+    height: calc(${props => props.height} + 3px);
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 11px 33px;
+  }
 `;
 export default function Button({ width, height, color, text }) {
   return (

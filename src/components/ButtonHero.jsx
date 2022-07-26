@@ -23,6 +23,13 @@ const HeroButton = styled(StyledButton)`
   & svg {
     margin-right: 4px;
   }
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.5;
+    width: 165px;
+    height: 48px;
+    margin-top: 32px;
+  }
 `;
 
 export default function ButtonHero({ height, width, hero, text }) {

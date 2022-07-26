@@ -7,27 +7,43 @@ import People2x from 'assets/images/home/people@2x.jpg';
 import PeopleWebp2x from 'assets/images/home/people@2x.webp';
 import Button from '../Button';
 
+export const Container = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+`;
 export const ImgBox = styled.picture`
   & img {
     width: 100vw;
   }
   @media screen and (min-width: 768px) {
     & img {
-      min-width: 368px;
+      width: 368px;
+      height: ${props => props.height || '589px'};
+      object-fit: cover;
     }
   }
   @media screen and (min-width: 1360px) {
     & img {
       min-width: 670px;
+      width: 40vw;
+      height: 460px;
     }
   }
 `;
-const ImgWrapper = styled.div``;
 export const TextWrapper = styled.div`
   padding: 40px 20px;
   background-color: ${props =>
     ({ theme }) =>
       theme[props.color]};
+  @media screen and (min-width: 768px) {
+    padding: 40px 32px;
+    padding-right: 73px;
+  }
+  @media screen and (min-width: 1360px) {
+    padding: 80px 20px;
+    padding-right: 64px;
+  }
 `;
 
 export const Text = styled.p`
@@ -35,6 +51,9 @@ export const Text = styled.p`
   font-size: ${props => props.size};
   line-height: 1.6;
   color: ${({ theme }) => theme.colorSecondFont};
+  @media screen and (min-width: 768px) {
+    font-size: calc(${props => props.size} + 2px);
+  }
 `;
 
 export const Title = styled.h2`
@@ -48,7 +67,7 @@ export const Title = styled.h2`
 export default function AboutSection() {
   return (
     <Section id="about">
-      <ImgWrapper>
+      <Container>
         <ImgBox>
           <source
             srcSet={`${PeopleWebp}, ${PeopleWebp2x} 2x`}
@@ -57,24 +76,24 @@ export default function AboutSection() {
           <source srcSet={`${People}, ${People2x} 2x`} type="image/jpg" />
           <img src={People} alt="team of professionals" />
         </ImgBox>
-      </ImgWrapper>
-      <TextWrapper color="colorGreenBackground">
-        <Text size="18px">What you are looking for</Text>
-        <Title>We provide bespoke solutions</Title>
-        <Text size="16px" mt="24px">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate,
-          ipsum dignissimos quae laudantium asperiores nam aliquid impedit harum
-          illum dolore explicabo ab dolores itaque rerum temporibus doloribus
-          iste maiores deleniti?
-        </Text>
-        <Button
-          type="button"
-          width="158px"
-          height="47"
-          color="colorGreenBackground"
-          text="Read More"
-        />
-      </TextWrapper>
+        <TextWrapper color="colorGreenBackground">
+          <Text size="18px">What you are looking for</Text>
+          <Title>We provide bespoke solutions</Title>
+          <Text size="16px" mt="24px">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate,
+            ipsum dignissimos quae laudantium asperiores nam aliquid impedit
+            harum illum dolore explicabo ab dolores itaque rerum temporibus
+            doloribus iste maiores deleniti?
+          </Text>
+          <Button
+            type="button"
+            width="158px"
+            height="47"
+            color="colorGreenBackground"
+            text="Read More"
+          />
+        </TextWrapper>
+      </Container>
     </Section>
   );
 }

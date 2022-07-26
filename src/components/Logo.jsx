@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { animateScroll as scroll } from 'react-scroll';
 import { ReactComponent as LogoIcon } from 'assets/logo-icon.svg';
 
 const LogoWrapper = styled.div`
@@ -30,11 +31,22 @@ const LogoWrapper = styled.div`
   &:focus span {
     color: ${({ theme }) => theme.colorGreenHover};
   }
+  @media screen and (min-width: 768px) {
+    margin: 0 32px;
+    font-size: 35px;
+    line-height: 1.21;
+    & svg {
+      margin-right: 10px;
+    }
+  }
 `;
 
 export default function Logo() {
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
   return (
-    <LogoWrapper>
+    <LogoWrapper onClick={scrollToTop}>
       <LogoIcon />
       <p>
         <span>Finance</span>

@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { theme } from 'styles/theme';
 import { ThemeProvider } from 'styled-components';
@@ -17,6 +18,24 @@ import TeamSection from 'components/section/TeamSection';
 const Header = styled.header`
   margin: 0 auto;
   text-align: center;
+  height: 120px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+  &.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 `;
 const Wrapper = styled.div`
   padding-top: 20px;
@@ -27,8 +46,19 @@ const Wrapper = styled.div`
     ),
     url('${Hero}');
   background-repeat: no-repeat;
-  background-size: auto 533px;
+  background-size: auto 535px;
   background-position: top center;
+  @media screen and (min-width: 768px) {
+    background-size: auto 1040px;
+  }
+  @media screen and (min-width: 1360px) {
+    background-size: auto 820px, contain;
+    background-position: top;
+  }
+  @media screen and (min-width: 1920px) {
+    background-size: auto 1200px, contain;
+    background-position: top;
+  }
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -45,11 +75,25 @@ const Wrapper = styled.div`
 `;
 
 function App() {
+  useEffect(() => {
+    window.addEventListener('scroll', isSticky);
+    return () => {
+      window.removeEventListener('scroll', isSticky);
+    };
+  });
+
+  const isSticky = e => {
+    const header = document.getElementById('header');
+    const scrollTop = window.scrollY;
+    scrollTop >= 120
+      ? header.classList.add('is-sticky')
+      : header.classList.remove('is-sticky');
+  };
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Wrapper>
-        <Header>
+        <Header id="header">
           <Logo />
           <Navigation />
         </Header>

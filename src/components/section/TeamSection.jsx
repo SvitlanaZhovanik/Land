@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Section } from './HeroSection';
 import { CenterText, CenterTitle, ImgBox, ImageWrapper } from './CasesSection';
-import { TextWrapper } from './AboutSection';
+import { Wrapper } from './CasesSection';
 import { team } from 'assets/team';
 import IconGroup from 'components/IconGroup';
 
@@ -15,6 +15,11 @@ const TeamTitle = styled(CenterTitle)`
   font-size: 23px;
   line-height: 1.2;
   margin-top: 16px;
+  @media screen and (min-width: 768px) {
+    margin-top: 14px;
+    font-size: 25px;
+    line-height: 1.3;
+  }
 `;
 const Card = styled.div`
   position: relative;
@@ -27,6 +32,9 @@ const Card = styled.div`
   &:hover div#box,
   &:focus div#box {
     opacity: 1;
+  }
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
   }
 `;
 const ImgOutline = styled.div`
@@ -45,6 +53,7 @@ const ImgOutline = styled.div`
 
   @media screen and (min-width: 768px) {
     min-width: 223px;
+    height: calc(100% - 87px);
   }
   @media screen and (min-width: 1360px) {
     min-width: 421px;
@@ -54,7 +63,7 @@ const ImgOutline = styled.div`
 export default function TeamSection() {
   return (
     <Section>
-      <TextWrapper>
+      <Wrapper>
         <CenterText size="18px">Who we are</CenterText>
         <CenterTitle>Our Professional Team</CenterTitle>
         <CenterText size="16px" mt="20px">
@@ -87,7 +96,7 @@ export default function TeamSection() {
             );
           })}
         </ImageWrapper>
-      </TextWrapper>
+      </Wrapper>
     </Section>
   );
 }

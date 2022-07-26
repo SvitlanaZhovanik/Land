@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ImgBox } from './AboutSection';
+import { ImgBox, Container } from './AboutSection';
 import { Section } from './HeroSection';
-import { TextWrapper } from './AboutSection';
 import Contact from 'assets/images/home/contact.jpg';
 import Contact2x from 'assets/images/home/contact@2x.jpg';
 import ContactWebp from 'assets/images/home/contact.webp';
@@ -14,22 +13,37 @@ const Title = styled.h2`
   font-size: 38px;
   line-height: 1.2;
 `;
+const Wrapper = styled.div`
+  padding: 40px 20px;
+  background-color: ${props =>
+    ({ theme }) =>
+      theme[props.color]};
+  @media screen and (min-width: 768px) {
+    padding: 40px 30px;
+    width: 100%;
+  }
+  @media screen and (min-width: 1920px) {
+    padding: 80px 100px;
+  }
+`;
 
 export default function ContactSection() {
   return (
     <Section id="contact">
-      <ImgBox>
-        <source
-          srcSet={`${ContactWebp}, ${ContactWebp2x} 2x`}
-          type="image/webp"
-        />
-        <source srcSet={`${Contact}, ${Contact2x} 2x`} type="image/jpg" />
-        <img src={Contact} alt="the man is working at the table" />
-      </ImgBox>
-      <TextWrapper color="colorFormBackground">
-        <Title>Request Callback</Title>
-        <ContactForm />
-      </TextWrapper>
+      <Container>
+        <ImgBox height="354px">
+          <source
+            srcSet={`${ContactWebp}, ${ContactWebp2x} 2x`}
+            type="image/webp"
+          />
+          <source srcSet={`${Contact}, ${Contact2x} 2x`} type="image/jpg" />
+          <img src={Contact} alt="the man is working at the table" />
+        </ImgBox>
+        <Wrapper color="colorFormBackground">
+          <Title>Request Callback</Title>
+          <ContactForm />
+        </Wrapper>
+      </Container>
     </Section>
   );
 }
