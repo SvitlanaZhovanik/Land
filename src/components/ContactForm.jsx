@@ -107,7 +107,7 @@ export default function ContactForm() {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: encode({ 'form-name': 'contact', ...values }),
         })
-          .then()
+          .then(() => alert('Success!'))
           .catch(error => alert(error));
       }}
     >
