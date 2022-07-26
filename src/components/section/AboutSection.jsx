@@ -13,12 +13,12 @@ export const ImgBox = styled.picture`
   }
   @media screen and (min-width: 768px) {
     & img {
-      width: 368px;
+      min-width: 368px;
     }
   }
   @media screen and (min-width: 1360px) {
     & img {
-      width: 670px;
+      min-width: 670px;
     }
   }
 `;

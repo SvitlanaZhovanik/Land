@@ -22,29 +22,30 @@ const Item = styled.li`
   &:focus svg {
     fill: ${props =>
       ({ theme }) =>
-        theme[props.colorHover]};
+        theme[props.colorHover] || (({ theme }) => theme.colorBackground)};
+    opacity: ${props => props.opacity || 1};
   }
 `;
 
-export default function IconGroup() {
+export default function IconGroup({ color, opacity }) {
   return (
     <List>
-      <Item colorHover="colorGreenBackground">
+      <Item colorHover={color} opacity={opacity}>
         <a href="https://www.facebook.com/" aria-label="Icon Facebook">
           <Facebook />
         </a>
       </Item>
-      <Item colorHover="colorGreenBackground">
+      <Item colorHover={color} opacity={opacity}>
         <a href="https://www.twitter.com/" aria-label="Icon Twitter">
           <Twitter />
         </a>
       </Item>
-      <Item colorHover="colorGreenBackground">
+      <Item colorHover={color} opacity={opacity}>
         <a href="https://www.youtube.com/" aria-label="Icon YouTube">
           <YouTube />
         </a>
       </Item>
-      <Item colorHover="colorGreenBackground">
+      <Item colorHover={color} opacity={opacity}>
         <a href="https://www.linkedin.com/" aria-label="Icon LinkedIn">
           <LinkedIn />
         </a>

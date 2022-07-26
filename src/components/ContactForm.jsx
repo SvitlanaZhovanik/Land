@@ -59,9 +59,11 @@ const Button = styled(StyledButton)`
   margin-top: 35px;
   color: ${({ theme }) => theme.colorSecondFont};
   cursor: pointer;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.colorGreenHover};
+    opacity: 0.8;
+    background-color: ${({ theme }) => theme.colorGreenBackground};
     color: ${({ theme }) => theme.colorSecondFont};
   }
 `;

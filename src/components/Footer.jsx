@@ -16,7 +16,7 @@ const StyledFooter = styled.footer`
 export default function Footer() {
   return (
     <StyledFooter>
-      <IconGroup />
+      <IconGroup color="colorGreenBackground" />
       <p>Copyright &#169; 2021 - FinanceLedger</p>
     </StyledFooter>
   );

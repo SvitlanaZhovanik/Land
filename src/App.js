@@ -11,6 +11,8 @@ import AboutSection from 'components/section/AboutSection';
 import BlogSection from 'components/section/BlogSection';
 import ContactSection from 'components/section/ContactSection';
 import Footer from 'components/Footer';
+import CasesSection from 'components/section/CasesSection';
+import TeamSection from 'components/section/TeamSection';
 
 const Header = styled.header`
   margin: 0 auto;
@@ -18,7 +20,6 @@ const Header = styled.header`
 `;
 const Wrapper = styled.div`
   padding-top: 20px;
-  background-color: ${({ theme }) => theme.colorFooterBackground};
   background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.5),
@@ -55,7 +56,9 @@ function App() {
         <main>
           <HeroSection />
           <AboutSection />
+          <CasesSection />
           <BlogSection />
+          <TeamSection />
           <ContactSection />
         </main>
       </Wrapper>

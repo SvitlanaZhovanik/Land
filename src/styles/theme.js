@@ -11,6 +11,4 @@ export const theme = {
   colorBorderForm: '#F5F5F5',
   colorFormText: '#808080',
   colorFillIcon: '#28a745',
-  colorGreenHover: '#22913c',
-  colorWhiteHover: '#dddddd',
 };

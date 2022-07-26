@@ -13,10 +13,11 @@ const HeroButton = styled(StyledButton)`
   background-color: ${({ theme }) => theme.colorGreenBackground};
   border: none;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.colorGreenHover};
+    opacity: 0.8;
+    background-color: ${({ theme }) => theme.colorGreenBackground};
     color: ${({ theme }) => theme.colorSecondFont};
   }
   & svg {
