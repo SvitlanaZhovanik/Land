@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ReactComponent as Facebook } from 'assets/facebook.svg';
 import { ReactComponent as Twitter } from 'assets/twitter.svg';
@@ -53,3 +54,8 @@ export default function IconGroup({ color, opacity }) {
     </List>
   );
 }
+
+IconGroup.propType = {
+  color: PropTypes.string,
+  opacity: PropTypes.string,
+};
