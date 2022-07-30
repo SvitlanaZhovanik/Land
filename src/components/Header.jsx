@@ -4,8 +4,14 @@ import Logo from 'components/Logo';
 import Navigation from 'components/Navigation';
 
 const StyledHeader = styled.header`
+  position: absolute;
+  top: 20px;
+  left: auto;
+  right: auto;
   margin: 0 auto;
   text-align: center;
+  width: 100%;
+  max-width: 1360px;
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;

@@ -4,15 +4,15 @@ import { theme } from 'styles/theme';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'styles/GlobalStyle';
 import Header from 'components/Header';
-import HeroSection from 'components/section/HeroSection';
+import HeroSection from 'section/HeroSection';
 import Hero from 'assets/images/home/showcase.jpg';
 import Hero2x from 'assets/images/home/showcase@2x.jpg';
-import AboutSection from 'components/section/AboutSection';
-import BlogSection from 'components/section/BlogSection';
-import ContactSection from 'components/section/ContactSection';
+import AboutSection from 'section/AboutSection';
+import BlogSection from 'section/BlogSection';
+import ContactSection from 'section/ContactSection';
 import Footer from 'components/Footer';
-import CasesSection from 'components/section/CasesSection';
-import TeamSection from 'components/section/TeamSection';
+import CasesSection from 'section/CasesSection';
+import TeamSection from 'section/TeamSection';
 
 const Container = styled.div`
   max-width: 1360px;
@@ -28,14 +28,18 @@ const Wrapper = styled.div`
     ),
     url('${Hero}');
   background-repeat: no-repeat;
-  background-size: auto 565px;
+  background-size: auto 575px;
   background-position: top center;
+  max-width: 1920px;
   @media screen and (min-width: 768px) {
     background-size: auto 1040px;
   }
   @media screen and (min-width: 1360px) {
-    background-size: auto 820px, contain;
+    background-size: auto 1080px, 1920px 1080px;
     background-position: top;
+  }
+  @media screen and (min-width: 1920px) {
+    margin: 0 auto;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -56,8 +60,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Container>
-        <Wrapper>
+      <Wrapper>
+        <Container>
           <Header />
           <main>
             <HeroSection />
@@ -67,9 +71,9 @@ function App() {
             <TeamSection />
             <ContactSection />
           </main>
-        </Wrapper>
-        <Footer />
-      </Container>
+          <Footer />
+        </Container>
+      </Wrapper>
     </ThemeProvider>
   );
 }

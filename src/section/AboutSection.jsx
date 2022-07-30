@@ -5,7 +5,7 @@ import People from 'assets/images/home/people.jpg';
 import PeopleWebp from 'assets/images/home/people.webp';
 import People2x from 'assets/images/home/people@2x.jpg';
 import PeopleWebp2x from 'assets/images/home/people@2x.webp';
-import Button from '../Button';
+import Button from '../components/Button';
 
 export const Container = styled.div`
   @media screen and (min-width: 768px) {
